@@ -6,4 +6,4 @@ CREATE TABLE `entity_mapping` (
   `destination_entity_id` bigint(21) DEFAULT NULL,
   `entity_type` varchar(200) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=72 DEFAULT CHARSET=utf8
+) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8
