@@ -1,0 +1,32 @@
+<html>
+<head>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        {% if isActiveShopifyToken and isActiveSeoShopToken %}
+            <div class="col-lg-11 col-centered" style="float: none; margin: 0 auto;">
+                <a class="btn btn-success" href="{{ path('sync',{storeTypeFrom:shopifyStoreType,storeTypeTo:seoshopStoreType}) }}">Sync Data From Shopify To Seoshop</a>
+                <a class="btn btn-success" href="{{ path('sync',{storeTypeFrom:seoshopStoreType,storeTypeTo:shopifyStoreType}) }}">Sync Data From SeoShop To Shopify</a>
+            </div>
+        {% else %}
+            <div class="col-lg-11 col-centered" style="float: none; margin: 0 auto;">
+                {% if isActiveShopifyToken %}
+                    <div>Shopify Ready For Sync</div>
+                {% else %}
+                    <a class="btn btn-primary" href="{{ path('init_shopify') }}">Prepare Shopify</a>
+                {% endif %}
+                {% if isActiveShopifyToken %}
+                    <div>SeoShop Ready For Sync</div>
+                {% else %}
+                    <a class="btn btn-primary" href="{{ path('init_seoshop') }}">Prepare SeoShop</a>
+                {% endif %}
+
+            </div>
+        {% endif %}
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<html>
+<head>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        {% if result is not empty %}
+            <div class="col-lg-11 col-centered" style="float: none; margin: 0 auto;">
+                Statistic
+                <div>Categories : {{ result.category }}</div>
+                <div>Products : {{ result.product }}</div>
+            </div>
+        {% else %}
+            No result
+        {% endif %}
+
+    </div>
+</body>
+</html>

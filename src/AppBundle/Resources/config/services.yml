@@ -1,0 +1,18 @@
+services:
+    app.store_config_listener:
+        class: AppBundle\EventListener\StoreConfigListener
+        tags:
+            - { name: kernel.event_subscriber }
+
+    app.sync.processor:
+        class: AppBundle\Service\SyncProcessor
+        arguments: [ @doctrine ]
+
+    app.syncer:
+        class: AppBundle\Service\Syncer
+        arguments: [ @app.sync.processor ]
+
+    app.shopify_oauth2_provider:
+        class: AppBundle\Oauth2\ShopifyOauth2Provider
+        arguments: [ @router, @request_stack ]
+
