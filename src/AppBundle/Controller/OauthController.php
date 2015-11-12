@@ -126,8 +126,8 @@ class OauthController extends Controller
             // Validate the signature
             if ($signature == $signature)
             {
-                $seoShopConfig[Config::STORE_CONFIG_SECTION][SeoShopStore::CONFIG_ACCESS_TOKEN] = $token;
-                $this->get('session')->set(Config::STORE_CONFIG_SEOSHOP_SESSION_KEY,$seoShopConfig);
+                $config[Config::STORE_CONFIG_SECTION][SeoShopStore::CONFIG_ACCESS_TOKEN] = $token;
+                $this->get('session')->set(Config::STORE_CONFIG_SEOSHOP_SESSION_KEY,$config);
                 return new RedirectResponse($this->get('router')->generate('main'));
             }
         }

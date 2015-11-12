@@ -114,7 +114,7 @@ Class ShopifyOauth2Provider{
     public function getCallbackUrl()
     {
         if (empty($this->callbackUrl) && $this->request ){
-            $this->callbackUrl = $this->request->getSchemeAndHttpHost() . '/' . $this->router->generate(self::SHOPIFY_CALLBACK_ROUTE);
+            $this->callbackUrl = $this->request->getSchemeAndHttpHost() . $this->router->generate(self::SHOPIFY_CALLBACK_ROUTE);
         }
         return $this->callbackUrl;
     }
